@@ -1,0 +1,604 @@
+{
+    "menu": [
+      {
+        "id": 1,
+        "name": "Chicken Tikka",
+        "category": "Appetizers",
+        "price": 250
+      },
+      {
+        "id": 2,
+        "name": "Fish Amritsari",
+        "category": "Appetizers",
+        "price": 280
+      },
+      {
+        "id": 3,
+        "name": "Mutton Seekh Kebab",
+        "category": "Appetizers",
+        "price": 300
+      },
+      {
+        "id": 4,
+        "name": "Tandoori Prawns",
+        "category": "Appetizers",
+        "price": 350
+      },
+      {
+        "id": 5,
+        "name": "Chicken 65",
+        "category": "Appetizers",
+        "price": 220
+      },
+      {
+        "id": 6,
+        "name": "Butter Chicken",
+        "category": "Main Course",
+        "price": 350
+      },
+      {
+        "id": 7,
+        "name": "Mutton Rogan Josh",
+        "category": "Main Course",
+        "price": 380
+      },
+      {
+        "id": 8,
+        "name": "Fish Curry",
+        "category": "Main Course",
+        "price": 320
+      },
+      {
+        "id": 9,
+        "name": "Chicken Biryani",
+        "category": "Rice Dishes",
+        "price": 300
+      },
+      {
+        "id": 10,
+        "name": "Mutton Biryani",
+        "category": "Rice Dishes",
+        "price": 350
+      },
+      {
+        "id": 11,
+        "name": "Tandoori Roti",
+        "category": "Breads",
+        "price": 30
+      },
+      {
+        "id": 12,
+        "name": "Butter Naan",
+        "category": "Breads",
+        "price": 50
+      },
+      {
+        "id": 13,
+        "name": "Gulab Jamun",
+        "category": "Desserts",
+        "price": 100
+      },
+      {
+        "id": 14,
+        "name": "Rasmalai",
+        "category": "Desserts",
+        "price": 120
+      },
+      {
+        "id": 15,
+        "name": "Mango Lassi",
+        "category": "Beverages",
+        "price": 80
+      },
+      {
+        "id": 16,
+        "name": "Masala Chai",
+        "category": "Beverages",
+        "price": 40
+      },
+      {
+        "id": 17,
+        "name": "Chicken Korma",
+        "category": "Main Course",
+        "price": 340
+      },
+      {
+        "id": 18,
+        "name": "Mutton Vindaloo",
+        "category": "Main Course",
+        "price": 370
+      },
+      {
+        "id": 19,
+        "name": "Prawn Masala",
+        "category": "Main Course",
+        "price": 400
+      },
+      {
+        "id": 20,
+        "name": "Chicken Chettinad",
+        "category": "Main Course",
+        "price": 330
+      },
+      {
+        "id": 21,
+        "name": "Fish Tikka",
+        "category": "Appetizers",
+        "price": 290
+      },
+      {
+        "id": 22,
+        "name": "Tangdi Kebab",
+        "category": "Appetizers",
+        "price": 270
+      },
+      {
+        "id": 23,
+        "name": "Mutton Sheesh Taouk",
+        "category": "Appetizers",
+        "price": 320
+      },
+      {
+        "id": 24,
+        "name": "Chicken Malai Tikka",
+        "category": "Appetizers",
+        "price": 260
+      },
+      {
+        "id": 25,
+        "name": "Lamb Chops",
+        "category": "Appetizers",
+        "price": 400
+      },
+      {
+        "id": 26,
+        "name": "Chicken Dhansak",
+        "category": "Main Course",
+        "price": 340
+      },
+      {
+        "id": 27,
+        "name": "Mutton Do Pyaza",
+        "category": "Main Course",
+        "price": 360
+      },
+      {
+        "id": 28,
+        "name": "Fish Moilee",
+        "category": "Main Course",
+        "price": 330
+      },
+      {
+        "id": 29,
+        "name": "Prawn Curry",
+        "category": "Main Course",
+        "price": 380
+      },
+      {
+        "id": 30,
+        "name": "Chicken Kadai",
+        "category": "Main Course",
+        "price": 320
+      },
+      {
+        "id": 31,
+        "name": "Hyderabadi Biryani",
+        "category": "Rice Dishes",
+        "price": 320
+      },
+      {
+        "id": 32,
+        "name": "Prawn Biryani",
+        "category": "Rice Dishes",
+        "price": 380
+      },
+      {
+        "id": 33,
+        "name": "Jeera Rice",
+        "category": "Rice Dishes",
+        "price": 150
+      },
+      {
+        "id": 34,
+        "name": "Egg Biryani",
+        "category": "Rice Dishes",
+        "price": 250
+      },
+      {
+        "id": 35,
+        "name": "Garlic Naan",
+        "category": "Breads",
+        "price": 60
+      },
+      {
+        "id": 36,
+        "name": "Laccha Paratha",
+        "category": "Breads",
+        "price": 50
+      },
+      {
+        "id": 37,
+        "name": "Kulcha",
+        "category": "Breads",
+        "price": 55
+      },
+      {
+        "id": 38,
+        "name": "Roomali Roti",
+        "category": "Breads",
+        "price": 40
+      },
+      {
+        "id": 39,
+        "name": "Kheer",
+        "category": "Desserts",
+        "price": 110
+      },
+      {
+        "id": 40,
+        "name": "Gajar Ka Halwa",
+        "category": "Desserts",
+        "price": 130
+      },
+      {
+        "id": 41,
+        "name": "Kulfi",
+        "category": "Desserts",
+        "price": 90
+      },
+      {
+        "id": 42,
+        "name": "Jalebi",
+        "category": "Desserts",
+        "price": 80
+      },
+      {
+        "id": 43,
+        "name": "Sweet Lassi",
+        "category": "Beverages",
+        "price": 70
+      },
+      {
+        "id": 44,
+        "name": "Fresh Lime Soda",
+        "category": "Beverages",
+        "price": 60
+      },
+      {
+        "id": 45,
+        "name": "Buttermilk",
+        "category": "Beverages",
+        "price": 50
+      },
+      {
+        "id": 46,
+        "name": "Cold Coffee",
+        "category": "Beverages",
+        "price": 90
+      },
+      {
+        "id": 47,
+        "name": "Chicken Reshmi Kebab",
+        "category": "Appetizers",
+        "price": 280
+      },
+      {
+        "id": 48,
+        "name": "Mutton Boti Kebab",
+        "category": "Appetizers",
+        "price": 310
+      },
+      {
+        "id": 49,
+        "name": "Tandoori Fish Tikka",
+        "category": "Appetizers",
+        "price": 300
+      },
+      {
+        "id": 50,
+        "name": "Chicken Lollipop",
+        "category": "Appetizers",
+        "price": 240
+      },
+      {
+        "id": 51,
+        "name": "Mutton Keema Samosa",
+        "category": "Appetizers",
+        "price": 100
+      },
+      {
+        "id": 52,
+        "name": "Chicken Jalfrezi",
+        "category": "Main Course",
+        "price": 330
+      },
+      {
+        "id": 53,
+        "name": "Mutton Pasanda",
+        "category": "Main Course",
+        "price": 370
+      },
+      {
+        "id": 54,
+        "name": "Fish Tikka Masala",
+        "category": "Main Course",
+        "price": 350
+      },
+      {
+        "id": 55,
+        "name": "Prawn Malai Curry",
+        "category": "Main Course",
+        "price": 390
+      },
+      {
+        "id": 56,
+        "name": "Chicken Saagwala",
+        "category": "Main Course",
+        "price": 320
+      },
+      {
+        "id": 57,
+        "name": "Lucknowi Biryani",
+        "category": "Rice Dishes",
+        "price": 330
+      },
+      {
+        "id": 58,
+        "name": "Fish Biryani",
+        "category": "Rice Dishes",
+        "price": 360
+      },
+      {
+        "id": 59,
+        "name": "Chicken Fried Rice",
+        "category": "Rice Dishes",
+        "price": 220
+      },
+      {
+        "id": 60,
+        "name": "Mutton Keema Biryani",
+        "category": "Rice Dishes",
+        "price": 340
+      },
+      {
+        "id": 61,
+        "name": "Cheese Naan",
+        "category": "Breads",
+        "price": 70
+      },
+      {
+        "id": 62,
+        "name": "Onion Kulcha",
+        "category": "Breads",
+        "price": 65
+      },
+      {
+        "id": 63,
+        "name": "Pudina Paratha",
+        "category": "Breads",
+        "price": 55
+      },
+      {
+        "id": 64,
+        "name": "Keema Naan",
+        "category": "Breads",
+        "price": 80
+      },
+      {
+        "id": 65,
+        "name": "Ras Malai",
+        "category": "Desserts",
+        "price": 120
+      },
+      {
+        "id": 66,
+        "name": "Shahi Tukda",
+        "category": "Desserts",
+        "price": 140
+      },
+      {
+        "id": 67,
+        "name": "Phirni",
+        "category": "Desserts",
+        "price": 100
+      },
+      {
+        "id": 68,
+        "name": "Malpua",
+        "category": "Desserts",
+        "price": 110
+      },
+      {
+        "id": 69,
+        "name": "Rose Lassi",
+        "category": "Beverages",
+        "price": 80
+      },
+      {
+        "id": 70,
+        "name": "Jaljeera",
+        "category": "Beverages",
+        "price": 60
+      },
+      {
+        "id": 71,
+        "name": "Masala Coke",
+        "category": "Beverages",
+        "price": 70
+      },
+      {
+        "id": 72,
+        "name": "Aam Panna",
+        "category": "Beverages",
+        "price": 75
+      },
+      {
+        "id": 73,
+        "name": "Chicken Chapli Kebab",
+        "category": "Appetizers",
+        "price": 260
+      },
+      {
+        "id": 74,
+        "name": "Mutton Shammi Kebab",
+        "category": "Appetizers",
+        "price": 290
+      },
+      {
+        "id": 75,
+        "name": "Ajwaini Fish Tikka",
+        "category": "Appetizers",
+        "price": 310
+      },
+      {
+        "id": 76,
+        "name": "Chicken Angara",
+        "category": "Appetizers",
+        "price": 270
+      },
+      {
+        "id": 77,
+        "name": "Mutton Cutlet",
+        "category": "Appetizers",
+        "price": 180
+      },
+      {
+        "id": 78,
+        "name": "Chicken Bhuna",
+        "category": "Main Course",
+        "price": 340
+      },
+      {
+        "id": 79,
+        "name": "Mutton Korma",
+        "category": "Main Course",
+        "price": 380
+      },
+      {
+        "id": 80,
+        "name": "Goan Fish Curry",
+        "category": "Main Course",
+        "price": 360
+      },
+      {
+        "id": 81,
+        "name": "Prawn Balchao",
+        "category": "Main Course",
+        "price": 400
+      },
+      {
+        "id": 82,
+        "name": "Chicken Tikka Masala",
+        "category": "Main Course",
+        "price": 350
+      },
+      {
+        "id": 83,
+        "name": "Kolkata Biryani",
+        "category": "Rice Dishes",
+        "price": 320
+      },
+      {
+        "id": 84,
+        "name": "Chicken Pulao",
+        "category": "Rice Dishes",
+        "price": 280
+      },
+      {
+        "id": 85,
+        "name": "Mutton Keema Rice",
+        "category": "Rice Dishes",
+        "price": 300
+      },
+      {
+        "id": 86,
+        "name": "Egg Fried Rice",
+        "category": "Rice Dishes",
+        "price": 200
+      },
+      {
+        "id": 87,
+        "name": "Paneer Kulcha",
+        "category": "Breads",
+        "price": 70
+      },
+      {
+        "id": 88,
+        "name": "Chicken Keema Naan",
+        "category": "Breads",
+        "price": 90
+      },
+      {
+        "id": 89,
+        "name": "Kashmiri Naan",
+        "category": "Breads",
+        "price": 75
+      },
+      {
+        "id": 90,
+        "name": "Missi Roti",
+        "category": "Breads",
+        "price": 45
+      },
+      {
+        "id": 91,
+        "name": "Basundi",
+        "category": "Desserts",
+        "price": 130
+      },
+      {
+        "id": 92,
+        "name": "Qubani Ka Meetha",
+        "category": "Desserts",
+        "price": 150
+      },
+      {
+        "id": 93,
+        "name": "Double Ka Meetha",
+        "category": "Desserts",
+        "price": 120
+      },
+      {
+        "id": 94,
+        "name": "Zafrani Firni",
+        "category": "Desserts",
+        "price": 140
+      },
+      {
+        "id": 95,
+        "name": "Thandai",
+        "category": "Beverages",
+        "price": 90
+      },
+      {
+        "id": 96,
+        "name": "Solkadhi",
+        "category": "Beverages",
+        "price": 80
+      },
+      {
+        "id": 97,
+        "name": "Nimbu Pani",
+        "category": "Beverages",
+        "price": 50
+      },
+      {
+        "id": 98,
+        "name": "Badam Milk",
+        "category": "Beverages",
+        "price": 85
+      },
+      {
+        "id": 99,
+        "name": "Keema Pav",
+        "category": "Appetizers",
+        "price": 160
+      },
+      {
+        "id": 100,
+        "name": "Chicken Ghee Roast",
+        "category": "Main Course",
+        "price": 360
+      }
+    ]
+  }
