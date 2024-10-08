@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';         
+import 'package:flutter/material.dart';
 import '../models/menu_item.dart';
 import '../services/menu_service.dart';
 
@@ -17,6 +17,9 @@ class _MenuScreenState extends State<MenuScreen> {
   bool _isLoading = false;
   int _displayedItemCount = 20;
   final int _loadIncrement = 20;
+
+  // New: Map to store items grouped by category
+  Map<String, List<MenuItem>> _categorizedItems = {};
 
   @override
   void initState() {
@@ -38,11 +41,20 @@ class _MenuScreenState extends State<MenuScreen> {
     });
 
     _menuItems = await _menuService.getMenuItems();
+    _categorizeItems(); // New: Categorize items after loading
 
     setState(() {
       _displayedItemCount = _loadIncrement.clamp(0, _menuItems.length);
       _isLoading = false;
     });
+  }
+
+  // New: Method to categorize items
+  void _categorizeItems() {
+    _categorizedItems.clear();
+    for (var item in _menuItems) {
+      _categorizedItems.putIfAbsent(item.category, () => []).add(item);
+    }
   }
 
   Future<void> _loadMoreItems() async {
@@ -76,6 +88,35 @@ class _MenuScreenState extends State<MenuScreen> {
     });
   }
 
+  Widget _buildMenuItem(MenuItem item) {
+    final itemQuantity = _selectedItems[item.id] ?? 0;
+
+    return ListTile(
+      title: Text(item.name),
+      subtitle: Text('₹${item.price}'),
+      trailing: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (itemQuantity > 0) ...[
+            IconButton(
+              icon: const Icon(Icons.remove),
+              onPressed: () => _updateItemQuantity(item.id, -1),
+            ),
+            Text('$itemQuantity'),
+            IconButton(
+              icon: const Icon(Icons.add),
+              onPressed: () => _updateItemQuantity(item.id, 1),
+            ),
+          ] else
+            ElevatedButton(
+              child: const Text('Add'),
+              onPressed: () => _updateItemQuantity(item.id, 1),
+            ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,42 +127,20 @@ class _MenuScreenState extends State<MenuScreen> {
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               controller: _scrollController,
-              itemCount: _displayedItemCount + 1,
+              itemCount: _categorizedItems.length + 1,
               itemBuilder: (context, index) {
-                if (index == _displayedItemCount) {
+                if (index == _categorizedItems.length) {
                   return _isLoading
                       ? const Center(child: CircularProgressIndicator())
                       : const SizedBox.shrink();
                 }
 
-                final item = _menuItems[index];
-                final itemQuantity = _selectedItems[item.id] ?? 0;
+                final category = _categorizedItems.keys.elementAt(index);
+                final categoryItems = _categorizedItems[category]!;
 
-                return ListTile(
-                  title: Text(item.name),
-                  subtitle: Text(item.category),
-                  trailing: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text('₹${item.price}'),
-                      const SizedBox(width: 16),
-                      if (itemQuantity > 0) ...[
-                        IconButton(
-                          icon: const Icon(Icons.remove),
-                          onPressed: () => _updateItemQuantity(item.id, -1),
-                        ),
-                        Text('$itemQuantity'),
-                        IconButton(
-                          icon: const Icon(Icons.add),
-                          onPressed: () => _updateItemQuantity(item.id, 1),
-                        ),
-                      ] else
-                        ElevatedButton(
-                          child: const Text('Add'),
-                          onPressed: () => _updateItemQuantity(item.id, 1),
-                        ),
-                    ],
-                  ),
+                return ExpansionTile(
+                  title: Text(category),
+                  children: categoryItems.map((item) => _buildMenuItem(item)).toList(),
                 );
               },
             ),
