@@ -1,5 +1,4 @@
-//menu_screen.dart        - red screen fixed.
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';         
 import '../models/menu_item.dart';
 import '../services/menu_service.dart';
 
@@ -14,6 +13,7 @@ class _MenuScreenState extends State<MenuScreen> {
   final MenuService _menuService = MenuService();
   final ScrollController _scrollController = ScrollController();
   List<MenuItem> _menuItems = [];
+  Map<int, int> _selectedItems = {}; // Map to store item id and its quantity
   bool _isLoading = false;
   int _displayedItemCount = 20;
   final int _loadIncrement = 20;
@@ -67,6 +67,15 @@ class _MenuScreenState extends State<MenuScreen> {
     }
   }
 
+  void _updateItemQuantity(int itemId, int delta) {
+    setState(() {
+      _selectedItems.update(itemId, (value) => (value + delta).clamp(0, 99), ifAbsent: () => delta.clamp(0, 99));
+      if (_selectedItems[itemId] == 0) {
+        _selectedItems.remove(itemId);
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,10 +95,33 @@ class _MenuScreenState extends State<MenuScreen> {
                 }
 
                 final item = _menuItems[index];
+                final itemQuantity = _selectedItems[item.id] ?? 0;
+
                 return ListTile(
                   title: Text(item.name),
                   subtitle: Text(item.category),
-                  trailing: Text('₹${item.price}'),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text('₹${item.price}'),
+                      const SizedBox(width: 16),
+                      if (itemQuantity > 0) ...[
+                        IconButton(
+                          icon: const Icon(Icons.remove),
+                          onPressed: () => _updateItemQuantity(item.id, -1),
+                        ),
+                        Text('$itemQuantity'),
+                        IconButton(
+                          icon: const Icon(Icons.add),
+                          onPressed: () => _updateItemQuantity(item.id, 1),
+                        ),
+                      ] else
+                        ElevatedButton(
+                          child: const Text('Add'),
+                          onPressed: () => _updateItemQuantity(item.id, 1),
+                        ),
+                    ],
+                  ),
                 );
               },
             ),
