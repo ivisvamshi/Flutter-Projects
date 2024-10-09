@@ -18,7 +18,7 @@ class _MenuScreenState extends State<MenuScreen> {
   int _displayedItemCount = 20;
   final int _loadIncrement = 20;
 
-  // New: Map to store items grouped by category
+  // Map to store items grouped by category
   Map<String, List<MenuItem>> _categorizedItems = {};
 
   @override
@@ -41,7 +41,7 @@ class _MenuScreenState extends State<MenuScreen> {
     });
 
     _menuItems = await _menuService.getMenuItems();
-    _categorizeItems(); // New: Categorize items after loading
+    _categorizeItems(); // Categorize items after loading
 
     setState(() {
       _displayedItemCount = _loadIncrement.clamp(0, _menuItems.length);
@@ -49,12 +49,16 @@ class _MenuScreenState extends State<MenuScreen> {
     });
   }
 
-  // New: Method to categorize items
+  // Modified: Method to categorize items and sort items within categories
   void _categorizeItems() {
     _categorizedItems.clear();
     for (var item in _menuItems) {
       _categorizedItems.putIfAbsent(item.category, () => []).add(item);
     }
+    // Sort items within each category alphabetically
+    _categorizedItems.forEach((category, items) {
+      items.sort((a, b) => a.name.compareTo(b.name));
+    });
   }
 
   Future<void> _loadMoreItems() async {
